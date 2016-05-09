@@ -1,0 +1,40 @@
+:root{
+  --mainColor: #fff;
+  --height: 50px;
+  --bgcolor: #00bcd4;
+}
+.header{
+  color: var(--mainColor);
+  height: var(--height);
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  z-index: 1000;
+}
+.inner{
+  position: relative;
+  background: #2dc3e8;
+  height: var(--height);
+}
+.logo{
+  line-height: var(--height);
+  padding: 10px;
+  color: var(--mainColor);
+}
+.toolbar{
+  list-style: none;
+  line-height: var(--height);
+  > li{
+    display: inline-block;
+    margin-right: 10px;
+    > a{
+      display: inline-block;
+      height: var(--height);
+    }
+  }
+}
+.title{
+  color: #fff;
+}
+

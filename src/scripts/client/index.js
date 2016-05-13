@@ -29,8 +29,8 @@ function run() {
   const container = window.document.getElementById('content');
   const component = render(history, store);
   //const DevTools = require('components/dev_tools');
-  ReactDOM.render(
-      component, container);
+  //ReactDOM.render(
+  //    component, container);
 
   if (!__PRODUCTION__) {
     if (__DEVTOOLS__ && !window.devToolsExtension) {
@@ -43,6 +43,9 @@ function run() {
           container
       );
     }
+  }else{
+    ReactDOM.render(
+        component, container);
   }
 }
 

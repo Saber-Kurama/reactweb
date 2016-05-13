@@ -16,9 +16,10 @@ import preLoaders from './preLoaders';
 export default merge(base, common, {
   entry: ['webpack-hot-middleware/client'],
   //是否修改修改静态资源
-  //output: {
-  //  publicPath: `${appConfig.server.url}/`
-  //},
+  output: {
+    //publicPath: `${appConfig.server.url}/`
+    publicPath: '/'
+  },
   module: { preLoaders, loaders },
   plugins,
   devtool: 'cheap-module-inline-source-map'

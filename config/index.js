@@ -9,6 +9,9 @@ import resolve from './resolve';
 // 别名
 import aliases from './aliases';
 
+import globals from './globals';
+
+
 // postcss的配置
 import postcss from './postcss';
 // 当前环境
@@ -29,6 +32,7 @@ export default {
   paths,
   resolve,
   aliases,
+  globals:
 
   postcss,
   // browsersync: browsersync(argv),

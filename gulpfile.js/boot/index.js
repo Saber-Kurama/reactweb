@@ -1,6 +1,6 @@
 'use strict';
 
-// require('dotenv').load();
+require('dotenv').load();
 
 require('./logging.js');
 require('./globals.js');

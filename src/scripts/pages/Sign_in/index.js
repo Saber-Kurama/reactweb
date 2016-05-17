@@ -10,6 +10,10 @@ import React, { Component } from 'react';
 import Helmet from "react-helmet";
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
+
+import css from 'react-css-modules';
+import style from './style';
+@css(style)
 class SignIn extends Component {
   constructor() {
     super();
@@ -21,8 +25,10 @@ class SignIn extends Component {
   render() {
     const { fields: { firstName, lastName, email}, handleSubmit} = this.props;
     return (
-        <div>
+        <div styleName="root">
           <Helmet title="登录" />
+          <h1 styleName='title'>party rooms</h1>
+          <p styleName='desc'>share, discover, enjoy</p>
           <form onSubmit={handleSubmit}>
             <div>
               <label>First Name</label>
@@ -38,11 +44,23 @@ class SignIn extends Component {
             </div>
             <button type="submit">Submit</button>
           </form>
+
+          {this.renderForm()}
         </div>
     );
   }
+
+  renderForm() {
+    return(
+        <form styleName="form">
+          <div styleName="fields">
+
+          </div>
+        </form>
+    )
+  }
 }
-const SignInForm = reduxForm({
+const SignInFormPage = reduxForm({
   form: 'signin',                           // a unique name for this form
   fields: ['firstName', 'lastName', 'email'] // all the fields in your form
 })(SignIn);
@@ -52,4 +70,4 @@ function select(state) {
     router
   }
 }
-export default connect(select, {})(SignInForm);
+export default connect(select, {})(SignInFormPage);

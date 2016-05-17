@@ -1,0 +1,10 @@
+@import 'animations/initial';
+
+.initial {
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+}
+.initial-down{
+    composes: initial;
+    animation-name: fade-in-down;
+}

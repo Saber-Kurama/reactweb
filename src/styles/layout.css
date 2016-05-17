@@ -1,0 +1,16 @@
+.centered{
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.full{
+    min-width: 100vm;
+    min-height: 100vh;
+}
+
+.box{
+    composes: centered full;
+    display: flex;
+    flex-flow: column nowrap;
+}

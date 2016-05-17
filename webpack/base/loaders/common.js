@@ -4,6 +4,7 @@ import { addHash } from '../../utils';
 const name = addHash('[path][name].[ext]', 'hash:10');
 const fontname = addHash('fonts/[name].[ext]', 'hash:10');
 const imagename = addHash('images/[name].[ext]', 'hash:10');
+console.log('imagename', imagename);
 const limit = 10000;
 
 const loader = {
@@ -23,7 +24,7 @@ const loader = {
       ]
     }
   },
-  image: { url: { loader: 'url', include: [paths.assets.images] } }
+  image: { url: { loader: 'url'} }
 };
 
 const query = {

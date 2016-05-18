@@ -6,7 +6,7 @@
 /**
  * Created by saber on 16/5/16.
  */
-
+import mapObj from 'map-obj';
 export default (environments, environmentName, argv) => {
 
   const env = mapObj(

@@ -13,7 +13,6 @@ export default function(route, { dispatch, getState }){
     let { params, location } = nextState;
     console.log(route.requireAuth);
     if(route.requireAuth){
-      console.log('00000');
       repalce({
         pathname: '/sign-in',
         //query: route.query || location.query,
@@ -23,7 +22,6 @@ export default function(route, { dispatch, getState }){
     //  console.log('1111');
       //repalce('/');
     } else if(__CLIENT__){
-      console.log('????');
       const components = [route.component];
       console.log(components);
     }

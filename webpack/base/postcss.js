@@ -1,10 +1,10 @@
 import { paths, postcss, argv } from '../../config';
 
 const {
-  cssnext,
-  assets,
+    cssnext,
+    assets,
   // fontMagician
-} = postcss;
+    } = postcss;
 
 const reporters = () => [
   require('postcss-reporter'),

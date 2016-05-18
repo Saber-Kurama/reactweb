@@ -23,6 +23,7 @@ import parseArgs from './utils/parseArgs';
 const argv = parseArgs();
 const { environments, environmentName } = env(argv);
 
+
 export default {
   argv,
   name,
@@ -32,7 +33,7 @@ export default {
   paths,
   resolve,
   aliases,
-  globals:
+  globals: globals(environments, environmentName, argv),
 
   postcss,
   // browsersync: browsersync(argv),

@@ -2,7 +2,7 @@ import webpack from 'webpack';
 // import AppCachePlugin from 'appcache-webpack-plugin';
 import { globals, environment } from '../../../config';
 import common from './common';
-
+console.log('globals', globals);
 export default [
   ...common,
   new webpack.DefinePlugin({

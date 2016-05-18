@@ -1,32 +1,69 @@
 @import "variables";
 
-.root{
-    composes: box from 'styles/layout';
-    background: var(--red);
-    overflow-y: hidden;
-    background: transparent url("./bg.jpg");
-    background-size: cover;
+:root {
+  --root-text-color: #fff;
 }
 
-.title{
-    composes: initial-down from 'styles/animations';
-    font-size: responsive 2rem 2.4rem;
-    font-weight: bold;
-    color: var(--brand-primary-pastel);
-    text-shadow: 1px 1px 4px rgba(#000, 0.8);
-    text-transform: uppercase;
+.root {
+  composes: box from 'styles/layout';
+  background: var(--red);
+  overflow-y: hidden;
+  background: transparent url("./bg.jpg");
+  background-size: cover;
+}
+
+.title {
+  composes: initial-down from 'styles/animations';
+  font-size: responsive 2rem 2.4rem;
+  font-weight: bold;
+  color: var(--brand-primary-pastel);
+  text-shadow: 1px 1px 4px rgba(#000, 0.8);
+  text-transform: uppercase;
 }
 
 .desc {
-    composes: initial-down from "styles/animations";
-    font-size: responsive;
-    animation-duration: 0.5s;
-    color: var(--brand-info-pastel);
+  composes: initial-down from "styles/animations";
+  font-size: responsive;
+  animation-duration: 0.5s;
+  color: var(--brand-info-pastel);
 }
 
-.form{
-    width: 300px;
-    .fields{
-        margin-bottom: 14px;
+.form {
+  width: 300px;
+  .fields {
+    margin-bottom: 14px;
+    .code {
+      & > input {
+        font-size: responsive;
+        border-color: regb(#fff, 0.8);
+        color: var(--root-text-color);
+        text-align: center;
+      }
+      & > label {
+        color: var(--root-text-color);
+      }
+
+      & > input:focus ~ label {
+        color: rgba(#fff, 0.8);
+      }
+
+      & > span::before,
+      & > span::after {
+        background-color: var(--root-text-color);
+      }
+
+      & > span {
+        color: var(--root-text-color);
+      }
+
     }
+  }
+}
+// 第三方登录
+.social{
+  text-align: center;
+  & > a,
+  & > button{
+    margin: 0 2px;
+  }
 }

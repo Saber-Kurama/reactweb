@@ -2,7 +2,7 @@ import debug from 'debug';
 import { render as prettyjson } from 'prettyjson';
 
 import config from '../../config';
-// import toolbox from './toolbox';
+import toolbox from './toolbox';
 import postcss from './postcss';
 import eslint from './eslint';
 
@@ -48,7 +48,7 @@ export default {
   // 忽略对已知文件的解析
   module: { noParse },
 
-  // toolbox,
+  toolbox,
   postcss,
   eslint,
 

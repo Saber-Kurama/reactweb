@@ -28,18 +28,25 @@ function waitRedirect(provider, popup){
 
         clearInterval(interval);
         if (!popup) {reject({ error: 'Popup was blocked.' });}
-        if (popup.closed) {console.log('???=======', reject);reject({ error: 'Login has been cancelled.' });}
+        if (popup.closed) {console.log('???=======', reject);reject({error: 'Login has been cancelled.' });}
 
         reject({ error: 'Error. Please, try again.' });
       }else{
         try{
+          console.log('??????-----');
           const params = Qs.parse(popup.location.search.slice(1));
+          console.log(params);
           if(params.auth_token || params.error) popup.close();
+          console.log('huoing');
           if(params.auth_token){
+            console.log('>>>>>>>>>>>>>>>>>>>>>>>><<<<<<');
             const token = params.auth_token;
             const data = jwtDecode(token);
+            console.log(data);
             session.login(token);
+            console.log('??/xxxx');
             resolve({token, data});
+            console.log('>>>><<<<<>>>><<<');
           }else if(params.error){
             reject( {error: params.error} );
           }

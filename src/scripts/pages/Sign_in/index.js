@@ -18,6 +18,7 @@ import Tooltip from 'react-toolbox/lib/tooltip';
 import Snackbar from 'react-toolbox/lib/snackbar';
 
 import * as authActions from 'modules/auth/actions';
+import { validate } from './validtion';
 import css from 'react-css-modules';
 import style from './style';
 
@@ -82,7 +83,6 @@ class SignIn extends Component {
   }
   // 显示错误提示
   renderError(){
-    console.log('3456789')
     return (
       <Snackbar
           timeout={2000}
@@ -99,13 +99,13 @@ class SignIn extends Component {
     const { auth, fields:{ code }} = this.props;
     const valid = !code.error;
     const inputProps = {
-      label: valid ? 'Welcome' : 'Invite code',
+      label: valid ? 'Welcome!' : 'Invite code',
       //icon: 'thumb_up'
     };
     return(
-        <form styleName="form" data-valid={valid} onSubmit={this.handleSubmit}>
+        <form styleName="form"  onSubmit={this.handleSubmit}>
           <div styleName="fields">
-            <Input  {...inputProps} styleName="code" type="text" autoComplete="off" />
+            <Input  {...inputProps} {...code} styleName="code" type="text" autoComplete="off" />
           </div>
           <div styleName="social">
             {
@@ -126,7 +126,8 @@ class SignIn extends Component {
 }
 const SignInFormPage = reduxForm({
   form: 'signin',                           // a unique name for this form
-  fields: ['code'] // all the fields in your form
+  fields: ['code'], // all the fields in your form
+  validate
 })(SignIn);
 function select(state) {
   const { router, auth } = state;

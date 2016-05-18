@@ -25,7 +25,8 @@ export default (environments, environmentName, argv) => {
 
   const app = {
     settings:{
-      authRoot: JSON.stringify(process.env.AUTH_ROOT)
+      authRoot: JSON.stringify(process.env.AUTH_ROOT),
+      session: { ttl: 24 * 60 * 60 * 1000 }
     }
   }
 
